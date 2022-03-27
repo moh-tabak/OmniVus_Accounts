@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using OmniVus_Accounts.Data
+@using OmniVus_Accounts.Models.Entities
+@inject SignInManager<IdentityUser> _signInManager;
+@inject UserManager<IdentityUser> _userManger;
+@inject ApplicationDbContext _context;
+
+@model NavbarViewModel
+
+@{
+    if (_signInManager.IsSignedIn(User))
+    {
+        string accountId = _userManger.GetUserId(User);
+        var user = await _context.UsersInfo.FindAsync(accountId);
+        string fullName = "unknown user";
+        if (user != null)
+            fullName = $"{user.FirstName} {user.LastName}";
+            
+        <partial name="_UserNavbarPartial" model='@new NavbarViewModel(Model.CurrentRoute ,accountId ,fullName)' />
+    }
+
+    else
+    {
+        <partial name="_NavbarPartial" model='@new NavbarViewModel(Model.CurrentRoute)' />
+    }
+}

@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+
+<header class="bg-gradient-half-size">
+    <partial name="_HeaderPartial" model='@new NavbarViewModel("/Home/Contact")' />
+
+    <section class="mt-5 big-padding-center">
+        <div class="font-size-80">Contact Us</div>
+        <div class="text-light">Home | Contact</div>
+    </section>
+</header>
+
+<section id="get-a-quote" class="big-padding-center">
+    <div class="container">
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="me-5 pe-3 w-600 text-start">
+                <div class="mb-4 d-flex">
+                    <span class="text-primary">Get In Touch</span>
+                    <div class="blue-line"></div>
+                </div>
+                <div class="mb-5 font-size-60">
+                    Estimate for your projects.
+                </div>
+                <form method="post" asp-controller="Home" asp-action="">
+                    <div class="input-group">
+                        <input id="name-input" class="p-4 ps-5 d-block w-100 form-control border-0" placeholder="Enter your name" type="text">
+                    </div>
+                    <div class="mb-2 error-msg is-hidden">Name must be atleast 2 letters, and not contain numbers</div>
+
+                    <div class="input-group">
+                        <input id="email-input" class="p-4 ps-5 d-block w-100 form-control border-0" placeholder="Enter your email" type="email">
+                    </div>
+                    <div class="mb-2 error-msg is-hidden">Invalid Email address</div>
+                    <div class="mb-4 input-group">
+                        <textarea name="subject-input" id="" class="p-4 ps-5 w-100 form-control border-0 multi-line-text" placeholder="Enter your message" rows="10"></textarea>
+                    </div>
+                    <button type="submit" class="mt-4 py-3 w-50 btn-primary">Submit Now</button>
+                </form>
+            </div>
+            <div>
+                <img src="~/images/geom-art-3.svg" alt="">
+            </div>
+        </div>
+    </div>
+</section>

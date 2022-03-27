@@ -1,0 +1,141 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+<header class="bg-gradient-rect">
+    <partial name="_HeaderPartial" model='@new NavbarViewModel("/")' />
+
+    <section id="showcase">
+        <div class="container">
+            <div class="d-flex justify-content-end">
+                <div class="w-50 d-flex flex-column align-items-baseline justify-content-center">
+                    <div class="ms-3 mb-4 font-size-24 text-light">
+                        Promote any product, service or online course.
+                    </div>
+                    <div class="ms-3 mb-4 font-size-80">Get every it Services Here</div>
+                    <div class="d-flex">
+                        <div class="me-5 font-size-24">
+                            <img class="d-inline" src="Images/circle_btn_red.svg" alt="" />
+                            <span>IT Product</span>
+                        </div>
+                        <div class="font-size-24">
+                            <img class="d-inline" src="Images/circle_btn_blue.svg" alt="" />
+                            <span>IT Services</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="person-img">
+                    <img class="ms-4" src="Images/person.svg" alt="" />
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+
+
+<section id="about-us">
+    <img id="bg-arrow" src="~/images/left-arrow.svg" alt="" />
+    <div class="mt-5 container">
+        <div class="d-flex align-items-center">
+            <img src="~/images/geom-art-1.svg" alt="" />
+            <div class="ms-5">
+                <div class="ms-4 mb-3 d-flex">
+                    <span class="text-primary">About Us</span>
+                    <div class="blue-line"></div>
+                </div>
+                <div class="ms-4 mb-4 w-75 font-size-60">
+                    You can't use up creativity.
+                </div>
+                <div class="ms-4 w-600 text-light">
+                    Does any industry face a more complex audience journey and
+                    marketing sales process than B2B technology? Consider the number
+                    of people who influence a sale, the length of the decision-making
+                    cycle, the competing interests of the people who purchase,
+                    implement, manage, and use the technology. It’s a lot meaningful
+                    content here.
+                </div>
+                <div class="mt-5 d-flex">
+                    <div id="blue-triangle"></div>
+                    <div class="text-primary font-size-100">15</div>
+                    <div class="ms-4 font-size-30 w-25">Years Of Experience</div>
+                </div>
+                <div class="ms-4 mt-5">
+                    <button class="btn-primary text-white">Learn More</button>
+                    <button class="ms-3 btn-secondary">Intro Video</button>
+                </div>
+                <div id="blue-triangle-right" class="mt-5"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="intro" class="text-dark bg-dark">
+    <div class="mt-5 pt-5 pb-5 container">
+        <div class="d-flex justify-content-around">
+            <div class="align-self-center">
+                <div class="mb-4 d-flex">
+                    <span class="text-primary">Intro</span>
+                    <div class="blue-line"></div>
+                </div>
+                <div class="mb-4 w-460 font-size-60 text-white">
+                    How we grow our business.
+                </div>
+                <div class="mb-4 w-600 font-size-24">
+                    The introduction of cloud and mobile technologies into enterprise software.
+                </div>
+                <div class="mb-5 w-600">
+                    Whether you are building an enterprise web portal or a state-of-the-art website, you always need the right
+                    modern tools. Well-built and maintained .NET frameworks provide those tools in abundance, allowing
+                    developers to save time, re-use code, and streamline the back end. As software development tools
+                    continuously.
+                </div>
+                <button class="btn-primary">Learn More</button>
+            </div>
+            <div class="mt-5 mb-5">
+                <img src="~/images/geom-art-2.svg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="book-a-meeting">
+    <div>
+        <div class="container text-lightcyan">
+            <div class="mb-4 text-white font-size-60 text-center">Book a Meeting</div>
+            <p class="mb-5 text-center">
+                Does any industry face a more complex audience journey and marketing sales process than B2B technology.
+            </p>
+            <form method="post" asp-controller="Home" asp-action="">
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="input-group">
+                            <input id="name-input" class="form-control p-4 bg-transparent border-secondary  border-end-0 text-lightcyan"
+                                   placeholder="Enter you name" type="text">
+                            <div class="input-group-append">
+                                <span class="p-4 input-group-text bg-transparent border-secondary text-lightcyan fa-regular fa-user"></span>
+                            </div>
+                        </div>
+                        <div class="error-msg is-hidden">Name must be atleast 2 letters, and not contain numbers</div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group">
+                            <input id="email-input" class="form-control p-4 bg-transparent border-secondary border-end-0 text-lightcyan"
+                                   placeholder="Enter you Email" type="text">
+                            <div class="input-group-append">
+                                <span class="p-4 input-group-text bg-transparent border-secondary text-lightcyan fa-regular fa-envelope"></span>
+                            </div>
+                        </div>
+                        <div class="error-msg is-hidden">Invalid Email address</div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <textarea id="subject-input" class="col p-4 form-control bg-transparent border-secondary  border-end-0 text-lightcyan multi-line-text"
+                              placeholder="Enter your questions & subject here."></textarea>
+                    <div class="input-group-append">
+                        <span class="p-4 input-group-text bg-transparent border-secondary text-lightcyan fa-regular fa-pen-to-square multi-line-text"></span>
+                    </div>
+                </div>
+                <button type="submit" class=" d-block m-auto mt-5 btn-primary">Book a Meeting Now</button>
+            </form>
+        </div>
+    </div>
+</section>

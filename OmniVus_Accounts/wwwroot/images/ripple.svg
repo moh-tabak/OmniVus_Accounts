@@ -1,0 +1,5 @@
+<svg id="Component_1_1" data-name="Component 1 – 1" xmlns="http://www.w3.org/2000/svg" width="627" height="627" viewBox="0 0 627 627">
+  <circle id="bg" cx="313.5" cy="313.5" r="313.5" fill="#ebf4ff"/>
+  <circle id="bg-2" data-name="bg" cx="253" cy="253" r="253" transform="translate(60 61)" fill="#f3faff"/>
+  <circle id="bg-3" data-name="bg" cx="201" cy="201" r="201" transform="translate(112 113)" fill="#fff"/>
+</svg>

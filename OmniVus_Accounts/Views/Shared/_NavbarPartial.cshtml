@@ -1,0 +1,32 @@
+﻿@model NavbarViewModel
+
+@{
+    var redirParm = new Dictionary<string, string> { { "returnUrl", Model.CurrentRoute } };
+}
+
+<section id="navbar">
+    <div class="container">
+        <div class="d-flex justify-content-between">
+            <img id="logo" src="~/images/logo.svg" alt="" />
+            <div id="links">
+                <div id="external-links" class="d-flex justify-content-between">
+                    <a id="email" href="mailto:info@domain.com" class="pt-3 pb-2">info@domain.com</a>
+                    <div id="socials" class="pt-1 d-flex align-items-center">
+                        <a title="facebook" href="https://www.facebook.com" class="m-3 fa-brands fa-facebook"></a>
+                        <a title="twitter" href="https://www.twitter.com" class="m-3 fa-brands fa-twitter"></a>
+                        <a title="linkedin" href="https://www.linkedin.com" class="m-3 fa-brands fa-linkedin"></a>
+                        <a title="youtube" href="https://www.youtube.com" class="m-3 me-0 fa-brands fa-youtube"></a>
+                    </div>
+                </div>
+                <div id="nav-links" class="mt-3 d-flex justify-content-end align-bottom align-items-center">
+                    <a class="me-5" asp-controller="Home" asp-action="Index">Home</a>
+                    <a class="me-5" asp-controller="Home" asp-action="Services">Services</a>
+                    <a class="me-5" asp-controller="Home" asp-action="Contact">Contact</a>
+                        <a class="px-4 py-2 btn-primary text-white" asp-controller="Auth" asp-action="LogIn" asp-all-route-data="redirParm">
+                            Log In
+                        </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

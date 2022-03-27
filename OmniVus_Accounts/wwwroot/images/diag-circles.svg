@@ -1,0 +1,4 @@
+<svg id="diag-circles" xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="0 0 130 130">
+  <circle id="bg" cx="53" cy="53" r="53" transform="translate(24 24)" fill="#006de8"/>
+  <circle id="bg-2" data-name="bg" cx="16.5" cy="16.5" r="16.5" fill="#00e8cf"/>
+</svg>

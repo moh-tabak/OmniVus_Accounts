@@ -1,0 +1,38 @@
+﻿@model LoginForm
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<div class="container py-5">
+    <h4>Log In</h4>
+    <hr />
+    <div>
+        New here? 
+        <a asp-controller="auth" asp-action="SignUp">Click here to sign up.</a>
+    </div>
+    
+    <div class="w-600 mx-auto my-5 p-5 bg-light">
+        <span class="mb-5 text-danger">@Model.ErrorMsg</span>
+        <form asp-controller="auth" asp-action="LogIn" method="post" asp-route-returnurl="@Context.Request.Query["returnUrl"]">
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-4">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" type="password" autocomplete="off" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Log in" class="px-4 py-2 btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

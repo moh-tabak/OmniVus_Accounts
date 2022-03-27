@@ -1,0 +1,67 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using OmniVus_Accounts.Data
+@using OmniVus_Accounts.Models.Entities
+@inject SignInManager<IdentityUser> _signInManager;
+@inject UserManager<IdentityUser> _userManger;
+@inject ApplicationDbContext _context;
+
+@model UserProfileViewModel
+
+@{
+    ViewData["Title"] = "My Profile";
+}
+
+<partial name="_HeaderPartial" model='@new NavbarViewModel("/")' />
+
+<div class="container p-5">
+    <hr />
+    <div>
+        @{
+            foreach (string role in Model.Roles)
+            {
+                //Capitalize first letter
+                string f = role.Substring(0, 1).ToUpper() + role.Substring(1);
+                <h3>@f</h3>
+            }
+        }
+    </div>
+
+    <div class=d-flex p-5>
+        <div class="w-50 border-1">
+        </div>
+        <div>
+            <div class="row mb-3">
+                <div class="form-group col">
+                    <label asp-for="FirstName" class="control-label"></label>
+                    <input asp-for="FirstName" value=@Model.FirstName class="form-control" />
+                </div>
+                <div class="form-group col">
+                    <label asp-for="LastName" class="control-label"></label>
+                    <input asp-for="LastName" value=@Model.LastName class="form-control" />
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" value=@Model.Email class="form-control" />
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" value=@Model.Phone class="form-control" />
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Street" class="control-label"></label>
+                <input asp-for="Street" value=@Model.Street class="form-control" />
+            </div>
+            <div class="row mb-5">
+                <div class="form-group col">
+                    <label asp-for="PostalCode" class="control-label"></label>
+                    <input asp-for="PostalCode" value=@Model.PostalCode class="form-control" />
+                </div>
+                <div class="form-group col">
+                    <label asp-for="City" class="control-label"></label>
+                    <input asp-for="City" value=@Model.City class="form-control" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
