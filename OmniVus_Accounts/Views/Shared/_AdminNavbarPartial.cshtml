@@ -1,0 +1,31 @@
+﻿@model NavbarViewModel
+
+@{
+    var redirParm = new Dictionary<string, string> { { "returnUrl", Model.CurrentRoute } };
+}
+
+<section id="navbar">
+    <div class="container">
+        <div class="d-flex justify-content-between">
+            <img id="logo" src="~/images/logo.svg" alt="" />
+            <div id="links">
+                <div id="external-links" class="d-flex justify-content-between">
+                    <span class="pt-3 pb-2">Welcome @Model.FullName
+                    </span>
+                    <div class="pt-1 d-flex align-items-center">
+                        <a class="ms-4" asp-controller="Data" asp-action="UserProfile" >Profile</a> 
+                        <a class="ms-4" asp-controller="Auth" asp-action="LogOut" asp-all-route-data="redirParm">Log out</a>
+                    </div>
+                </div>
+                <div id="nav-links" class="mt-3 d-flex justify-content-end align-bottom align-items-center">
+                    <a class="me-5" asp-controller="Home" asp-action="Index">Home</a>
+                    <a class="me-5" asp-controller="Home" asp-action="Services">Services</a>
+                    <a class="me-5" asp-controller="Home" asp-action="Contact">Contact</a>
+                        <button class="btn-primary text-white" onclick="document.location='/#book-a-meeting'">
+                            Book a meeting
+                        </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
